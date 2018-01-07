@@ -2,6 +2,18 @@
 
 ### 1. Describe a data project you worked on recently.
 
+I recently worked on a Product Specialist challenge based on real-world data provided by Clover. 
+Clover's management would like to get a sense for what types of merchants have been recently acquired and what types of concerns they may have with our products. They were looking for an analysis on their products and market share along with merchant concerns. They were looking for insights and stories that could be presented to the management and help them understand and make better decisions.
+
+As part of this challenge, I firstly used SQL to explore their data on devices, merchants and concerns and pull some basic statistics. 
+The dataset had information on close to 100k merchants and 50k devices and numerous cases on merchant complaints and feedback. 
+Later, to understand the distribution of data and recognize key relationships between various data points, I used Tableau to map data against devices and merchants. I then proceeded to perform a case analysis on merchant complaints and feedback. 
+To make things easier for the management and to help them look into these relationships themselves, I created an interactive dashboard that provides a complete understanding of a device or merchant type right from the their relationship with each other to their history and current issues that are being tracked, all in one view. 
+
+I also provided them with my recommendations on how to improve a device's market share, the company's relationship with their merchants by providing an time analysis on how a merchant's association with a device or Clover tracked over a period, merchant's experience, the company's overall market share and how they Clover could improve the number of issues being tracked currently.
+
+Performing this challenge on real world data let me in utilizing my skills in Tableau and SQL to help a company understand their data and issues provide insights on their product which also improved my skills in rightly using my technical skills to solve a real world business problem.
+
 ### 2. You are given a ten piece box of chocolate truffles. You know based on the label that six of the pieces have an orange cream filling and four of the pieces have a coconut filling. If you were to eat four pieces in a row, what is the probability that the first two pieces you eat have an orange cream filling and the last two have a coconut filling?
 
   chocolate truffles in the box = 10
