@@ -104,3 +104,21 @@ A balance can be obtained by picking the right features and the right number of 
 
 ### 6. If you were to start your data analyst position today, what would be your goals a year from now?
 
+At Lookout, my goal would be to become a technical expert in SQL, Python and BI tools like Tableau and Chartio and a go-to person for innovative and important reports, insights or stories that drive important business decisions.
+
+My short term goals would be:
+
+* Explore and understand the data, relationships and data model maintained at Lookout
+* Communicate with different teams both, tech and business to understand what is important to them
+* Have a clear knowledge of important metrics/KPIs teams are interested in
+* Build reports and dashboards as per requirements
+
+
+My long term goals would be:
+
+* Build exceptional relationships with key business stakeholders and also improve business acumen 
+* Use my skills in SQL and Tableau to find interesting insights or stories
+* Code fluently in Python to develop new innovative metrics to track
+* Build self-service analytics app and automate delivery of reports when necessary
+* Build NLP based apllication so that non-tech or managerial staff could produce graphs/trends/insights just by asking a question in English
+
