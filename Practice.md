@@ -113,6 +113,9 @@ Underfitting refers to a model that performs poorly on training data and testing
 Overfitting refers to a model that performs exceptionally well on training data but poorly on training data. This happens when the algorithm picks up noise and fluctuations as concepts and matches with the training data too closely. It fails to generalize and impacts the performance on new/testing data negatively.
 
 A balance can be obtained by picking the right features and the right number of features without over tuning the algorithm. In reality, this is a difficult step – to find the right spot between underfitting and overfitting. 
+Underfitting is almost always very easy to detect with basic performance measures and in reality will not cause a surprising problem. To resolve overfitting, regularization and cross-validation could be used. 
+
+Regularization is the technique used to prevent overfitting by tuning the complexity of the model. It basically penalizes the model that closely tries to match the noisy data points. Cross-validation is used to tune the regularization term that gets added to the model for penalizing. These technoqies will prevent overfitting without compromising on the model's performance which will end up striking a balance between under and overfitting.
 
 ### 6. If you were to start your data analyst position today, what would be your goals a year from now?
 
