@@ -26,6 +26,8 @@ def test1():
     print 'question1(2,5):', 'Pass' if 'At least one of the inputs is not a string' == question1(2, 5) else 'Fail'
     print 'question1('ad', 'udacity'):', 'Pass' if False == question1('ad', 'udacity') else 'Fail'
     print 'question1('abcd', 'abcd'):', 'Pass' if True == question1('abcd', 'abcd') else 'Fail'
+
+test1()
 ```
 
 **2. Given a string a, find the longest palindromic substring contained in a. Your function definition should look like question2(a), and return a string.**
@@ -55,11 +57,13 @@ def question2(s):
 ```
 ***Test Cases***
 ```
-def test1():
+def test2():
     print 'Testing...'
     print 'question2('malayalam'):', 'Pass' if 'malayalam' == question2(malayalam) else 'Fail'
     print 'question2(890):', 'Pass' if 'The input is not a string. Please provide a string.' == question2(890) else 'Fail'
     print 'question2('adacity'):', 'Pass' if 'ada' == question2('adacity') else 'Fail'
+
+test2()
 ```
 
 **3. Given an undirected graph G, find the minimum spanning tree within G. A minimum spanning tree connects all vertices in a graph with the smallest possible total weight of edges. Your function should take in and return an adjacency list structured like this:**
@@ -69,7 +73,6 @@ def test1():
 > 'C': [('B', 5)]}
  
 ```
-def question3(G):
 def question3(G):
     # using Kruskal's algorithm
 
@@ -139,7 +142,102 @@ def test3():
          'C': [('B', 5)]}
     
     print 'Testing...'
-    print (question3(G)) 
-    print (question3(890))
-    print (question3({}))
+    print 'question3(G):', 'Pass' if G == question3(G) else 'Fail'
+    print 'question3(890):', 'Pass' if 'The input is not a dictionary. Please provide a dictionary.' == question3(890) else 'Fail'
+    print 'question3({}}):', 'Pass' if {} == question3({}) else 'Fail'
+    
+test3()
+```
+
+**5. Find the element in a singly linked list that's m elements from the end. For example, if a linked list has 5 elements, the 3rd element from the end is the 3rd element. The function definition should look like question5(ll, m), where ll is the first node of a linked list and m is the "mth number from the end". You should copy/paste the Node class below to use as a representation of a node in the linked list. Return the value of the node at that position.**
+
+>class Node(object):
+>  def __init__(self, data):
+>    self.data = data
+>    self.next = None
+
+```
+class Node(object):
+  def __init__(self, data):
+    self.data = data
+    self.next = None
+
+def get_length(ll):
+    # get the length of ll
+    if ll.next == None:
+        return 1
+    
+    length_ll = 0
+    current_node = ll
+    current_node2 = ll.next
+    while current_node != None and current_node != current_node2:
+        current_node = current_node.next
+        if current_node2 != None:
+            current_node2 = current_node2.next
+        if current_node2 != None:
+            current_node2 = current_node2.next
+        length_ll += 1
+
+    if current_node == None:
+        return length_ll
+    else:
+        return -1
+
+def question5(ll, m):
+    
+    # check if a list has been provided
+    if type(ll) != Node:
+        return 'The input does not have a valid node. Please provide a node.'
+
+    # check if an integer has been provided
+    if type(m) != int or m==0:
+        return 'The input does not have a valid integer. Please provide a valid integer.'
+    
+    # get the length of ll
+    length_ll = get_length(ll)
+
+    # check if the linked list is circular
+    if length_ll == -1:
+        return 'The list provided is a circular list.'
+        
+    # check if the list is ling enough
+    if length_ll < m:
+        return 'The provided integer is greater than the length of the list.'
+    
+    # store the list as 2 pointers 
+    h1=ll
+    h2=ll
+    
+    # loop through the range of m integers
+    for i in range(0,m):
+	    if (h1 == None):
+	        return None
+	    h1 = h1.next
+	
+	# gets the mth element
+    while (h1 != None):
+        h1 = h1.next
+        h2 = h2.next
+    return h2.data
+```
+***Test Cases***
+```
+def test5():
+    A = Node(6)
+    B = Node(2)
+    C = Node(4)
+    D = Node(3)
+    E = Node(5)
+    
+    A.next = B
+    B.next = C
+    C.next = D
+    D.next = E
+    
+    print 'Testing...'
+    print 'question5(B,2):', 'Pass' if 3 == question5(B,2) else 'Fail'
+    print 'question5(A,3):', 'Pass' if 4 == question5(A,3) else 'Fail'
+    print 'question5(D,5):', 'Pass' if 'The provided integer is greater than the length of the list.' == question5(D,5) else 'Fail'
+
+test5()
 ```
