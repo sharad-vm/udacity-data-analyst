@@ -7,25 +7,25 @@ def  question1(s,t):
     #check if some anagram of t is a substring of s
     if type(s) != str or type(t) != str:
         return 'At least one of the inputs is not a string'
-    result = 'False'
+    result = False
     
     # loop through the string against which we check for an anagram 
     for c in t:
         if c not in s:
             break
         elif sorted(s[s.index(t[t.index(c)]):s.index(t[t.index(c)])+len(t)]) == sorted(t):
-            result = 'True'
+            result = True
             break
     return result
 ```
 ***Test Cases***
 ```
 def test1():
-    print 'Testing..."
-    print 'question1('udacity', 'ad'):', 'Pass' if True == question1('udacity', 'ad') else 'Fail'
+    print 'Testing...'
+    print 'question1(udacity, ad):', 'Pass' if True == question1('udacity', 'ad') else 'Fail'
     print 'question1(2,5):', 'Pass' if 'At least one of the inputs is not a string' == question1(2, 5) else 'Fail'
-    print 'question1('ad', 'udacity'):', 'Pass' if False == question1('ad', 'udacity') else 'Fail'
-    print 'question1('abcd', 'abcd'):', 'Pass' if True == question1('abcd', 'abcd') else 'Fail'
+    print 'question1(ad, udacity):', 'Pass' if False == question1('ad', 'udacity') else 'Fail'
+    print 'question1(abcd, abcd):', 'Pass' if True == question1('abcd', 'abcd') else 'Fail'
 
 test1()
 ```
@@ -59,9 +59,9 @@ def question2(s):
 ```
 def test2():
     print 'Testing...'
-    print 'question2('malayalam'):', 'Pass' if 'malayalam' == question2(malayalam) else 'Fail'
+    print 'question2(malayalam):', 'Pass' if 'malayalam' == question2('malayalam') else 'Fail'
     print 'question2(890):', 'Pass' if 'The input is not a string. Please provide a string.' == question2(890) else 'Fail'
-    print 'question2('adacity'):', 'Pass' if 'ada' == question2('adacity') else 'Fail'
+    print 'question2(adacity):', 'Pass' if 'ada' == question2('adacity') else 'Fail'
 
 test2()
 ```
