@@ -148,13 +148,64 @@ def test3():
     
 test3()
 ```
+**4. Find the least common ancestor between two nodes on a binary search tree. The least common ancestor is the farthest node from the root that is an ancestor of both nodes. For example, the root is a common ancestor of all nodes on the tree, but if both nodes are descendents of the root's left child, then that left child might be the lowest common ancestor. You can assume that both nodes are in the tree, and the tree itself adheres to all BST properties. The function definition should look like question4(T, r, n1, n2), where T is the tree represented as a matrix, where the index of the list is equal to the integer stored in that node and a 1 represents a child node, r is a non-negative integer representing the root, and n1 and n2 are non-negative integers representing the two nodes in no particular order. For example, one test case might be**
+
+>question4([[0, 1, 0, 0, 0],  
+>          [0, 0, 0, 0, 0],  
+>          [0, 0, 0, 0, 0],  
+>          [1, 0, 0, 0, 1],  
+>          [0, 0, 0, 0, 0]],  
+>         3,  
+>         1,  
+>         4)  
+
+**and the answer would be 3.**
+
+```
+def parent(T, n):
+	#return parent of n if it exists else return -1
+    for i in range(len(T)):
+        if T[i][n] == 1:
+            return i
+    return -1
+
+def question4(T, r, n1, n2):
+    n1_list = []
+    while n1 != r:
+        n1 = parent(T, n1)
+        n1_list.append(n1)
+    if len(n1_list) == 0:
+        return -1
+    while n2 != r:
+        n2 = parent(T, n2)
+        if n2 in n1_list:
+            return n2
+    return -1
+```
+***Test Cases***
+```
+def test4():
+
+    T = [[0,1,0,0,0],
+         [0,0,0,0,0],
+         [0,0,0,0,0],
+         [1,0,0,0,1],
+         [0,0,0,0,0]]
+    
+    print 'Testing...'
+    print 'question4(T,3,1,4):', 'Pass' if 3 == question4(T,3,1,4) else 'Fail'
+    print 'question4(T,0,0,0):', 'Pass' if -1 == question4(T,0,0,0) else 'Fail'
+    print 'question4(T,3,1,2):', 'Pass' if 3 == question4(T,3,1,2) else 'Fail'
+
+test4()
+```
 
 **5. Find the element in a singly linked list that's m elements from the end. For example, if a linked list has 5 elements, the 3rd element from the end is the 3rd element. The function definition should look like question5(ll, m), where ll is the first node of a linked list and m is the "mth number from the end". You should copy/paste the Node class below to use as a representation of a node in the linked list. Return the value of the node at that position.**
 
->class Node(object):
->  def __init__(self, data):
->    self.data = data
->    self.next = None
+>class Node(object):  
+>   def __init__(self, data):  
+>     self.data = data  
+>     self.next = None  
 
 ```
 class Node(object):
@@ -241,3 +292,9 @@ def test5():
 
 test5()
 ```
+
+#### References 
+
+* [Kruskal's Minimum Spanning Tree](https://www.geeksforgeeks.org/greedy-algorithms-set-2-kruskals-minimum-spanning-tree-mst/)
+* [nth node from the end of a linked list](https://www.geeksforgeeks.org/nth-node-from-the-end-of-a-linked-list/)
+* [Lowest Common Ancestor in a Binary Search Tree](https://www.geeksforgeeks.org/lowest-common-ancestor-in-a-binary-search-tree/)
